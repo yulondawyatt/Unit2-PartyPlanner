@@ -3,6 +3,7 @@ const state = {
   eventsList: []
 }
 
+// Get list of Events from API
 const getAllEvents = async () => {
 
   try {
@@ -13,11 +14,9 @@ const getAllEvents = async () => {
     renderEvents();
   } catch(err) {
     console.log(err);
-  }
-  
-}
+  }}
 
-
+// Render list of Events from API
 const renderEvents = () => {
   // Loop through each event
   state.eventsList.forEach((oneEvent) => {
@@ -26,14 +25,18 @@ const renderEvents = () => {
 
     const ol = document.querySelector('ol');
     ol.appendChild(li);
-
     
   });
 }
   getAllEvents();
 
 
-
+  // Get data from individual Event
+  // const getOneEvent = async () => {
+  //   const response = await fetch ('https://fsa-crud-2aa9294fe819.herokuapp.com/api/COHORT_CODE/events/{id}');
+  //   console.log(response);
+  // }
+  //   getOneEvent();
 
 
 
@@ -52,6 +55,9 @@ appContainer.innerHTML = `<h1>FullStack Party Planner</h1>
 <!-- DETAILS OF SINGLE PARTY -->
 <section>
   <h2>Party Details</h2>
+
+  <div></div>
+
 </section>
 
 
